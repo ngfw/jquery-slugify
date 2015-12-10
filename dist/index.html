@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery-numbersOnly</title>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="build/style.min.css">
+	<script src="build/jQuery.slugify.min.js"></script>
+	
+	<script>
+	$(function() {
+	    // Demo 1
+	    $("#demo1").slugify();
+
+
+	    // Demo 2
+	    var tmp = $("#demo2").text(); // Store #demo2 text in tmp variable
+	    $('.demo2_switch').change(function() {
+	        if ($(this).is(":checked")) {
+	             $("#demo2").slugify();
+	        } else {
+	            $("#demo2").text(tmp)
+	        }
+	    });
+
+	});//$(function() {
+	</script>
+</head>
+<body>
+	<h1>jQuery slugify</h1>
+	<form>
+		<!-- DEMO 1 -->
+	  	<input type="text" name="demo1" class="inpt" id="demo1" required autocomplete="off" value="This is a test INPUT to slugify" />
+	  	<label for="demo1"><span>Convert as you type</span></label>
+	  	
+		<br /><br />
+		<!-- DEMO 2 -->
+	  	<p id="demo2">This is a test string to slugify</p>
+	  	<label for="demo2" class="borderTop"><span>Toggle String to Slug</span></label>
+	  	
+	  	
+	  	<div class="onoffswitch">
+		    <input type="checkbox" name="onoffswitch" class="demo2_switch onoffswitch-checkbox" id="myonoffswitch" >
+		    <label class="onoffswitch-label" for="myonoffswitch"></label>
+		</div>
+	</form>
+
+	<a class="button blue viewSource">View Source code</a>
+	<script>
+	// BTN to View Source
+	$("body").on("click", ".viewSource", function(){
+		$("body").fadeOut("slow", function(){
+			window.location="view-source:" + window.location.href;
+		});
+	});
+	</script>
+
+<script type="text/javascript">document.write('<script src="' + (location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':35729/livereload.js?snipver=1" type="text/javascript"><\/script>')</script>
+</body>
+</html>
